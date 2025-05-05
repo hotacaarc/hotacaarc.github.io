@@ -35,5 +35,7 @@
     updateBg(darkMedia);
     darkMedia.addEventListener('change', updateBg);
   
-    /* 4. 必要なら環境マ*
+    /* 4. 必要なら環境マップを差し替える（例） */
+    // viewer.environmentImage = '../img/hdr/studio.hdr';
+  });
   
