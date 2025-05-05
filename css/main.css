@@ -900,3 +900,11 @@ body.works-page #home .hero-img model-viewer {
   height: 100% !important;
   background-color: transparent !important;
 }
+
+/* ── 作品ページ（works-page）の小さめ見出しを復活 ── */
+body.works-page .hero-heading--small {
+  font-size: clamp(2rem, 1.6rem + 1vw, 3rem) !important;
+  font-weight: 600                 !important;
+  line-height: 1.25                !important;
+  margin: 0 0 0.5em                !important;
+}
