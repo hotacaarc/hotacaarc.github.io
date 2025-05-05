@@ -773,18 +773,6 @@ h5 {
   margin-bottom:16px;
 }
 
-/* Worksの見出し用 */
-/* font-size: clamp(2rem, 1.6rem + 1vw, 3rem); */
-
-/* hero-img の高さを 60vh に固定した例 */
-.hero-img{
-  height:60vh;
-}
-.hero-img model-viewer{
-  width:100%;
-  height:100%;
-}
-
 /* はんばーがー */
 /* 画面外に隠しておき、open で入れる */
 .nav{
@@ -835,7 +823,9 @@ body.home-page .hero-img        { flex: 1 1 356px !important; height: auto !impo
   #nav-btn { display:none; }          /* ボタン非表示 */
 }
 
-/* ── Works ページの Hero 画像：高さは比率にまかせる ── */
+
+/* WORK個別ページ */
+/* ── Works ページの Hero 画像：高さは比率にまかせる ゆがまないために必要。── */
 body.works-page .hero-img{      /* 作品ページの <body> に works-page クラス */
   height:auto !important;
 }
@@ -847,64 +837,51 @@ body.works-page .hero-img img{
   object-position:center;
 }
 
-/* ==============================================================
-   作品ページのヒーロー 3D コンテナに高さを再設定 3Dつぶれない様、不要かも
-   ============================================================== */
-   body.works-page .hero-img {
-    height: 60vh !important;        /* 画面高さの60％を確保 */
-    min-height: 300px;              /* 小さいスマホでも潰れないよう */
-  }
-  
-  body.works-page .hero-img model-viewer {
-    display: block;                 /* ブロック要素として振る舞う */
-    width: 100%;
-    height: 100%;                   /* 親の60vhを満たす */
-    object-fit: contain;            /* 元のアスペクト比を守る */
-  }
-  
-  /* ─────────────────────────────────────
-   3D モデル（model-viewer）を透明背景＆正常サイズで表示
-   ───────────────────────────────────── */
-model-viewer {
-  display: block;                    /* ブロック要素として幅100%を効かせる */
-  width: 100% !important;            /* 必ず親幅いっぱい */
-  height: 100% !important;           /* 親の高さを満たす */
-  background-color: transparent !important; /* デフォルトの黒背景を消す */
-}
-
-/* ── 作品ページの 3D ヒーロー領域を強制的に表示 ── */
-body.works-page #home .hero-img {
+/* ── 作品ページの 3D ヒーロー領域を強制的に表示 ── これ大事！！！逆に来れなければ、マージンなくなる*/
+body.works-page #home .model3D {
   /* 必要な高さを確保 */
   height: 60vh !important;      /* 画面高さの 60% を占有 */
   min-height: 300px !important; /* 小さい端末でも潰れない */
 }
 
-body.works-page #home .hero-img model-viewer {
-  /* ブロック化して親のサイズを満たす */
-  display: block !important;
-  width: 100%   !important;
-  height: 100%  !important;
-
-  /* 黒や白のデフォルト背景を消す */
-  background-color: transparent !important;
-}
-/* 作品ページだけ hero-img に高さを確保 */
-body.works-page #home .hero-img {
-  height: 60vh !important;
-  min-height: 300px !important;
-}
-
-body.works-page #home .hero-img model-viewer {
+/* 3D背景透明化 */
+body.works-page #home .model3D model-viewer {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
   background-color: transparent !important;
 }
 
-/* ── 作品ページ（works-page）の小さめ見出しを復活 ── */
+/* ── 作品ページ（works-page）の小さめ見出しを復活　必要 ── */
 body.works-page .hero-heading--small {
   font-size: clamp(2rem, 1.6rem + 1vw, 3rem) !important;
   font-weight: 600                 !important;
   line-height: 1.25                !important;
   margin: 0 0 0.5em                !important;
+  overflow-wrap: break-word;
+}
+
+
+/* workページスマホ用修正 */
+@media (max-width: 768px) {
+
+  /* ① Hero の container の左右パディングをリセット */
+  body.works-page .hero .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* ② 画像領域に左右それぞれ 16px の固定マージンを付与 */
+  body.works-page .hero-img {
+    margin: 0 16px !important;
+    width: calc(100% - 32px) !important; /* 左右マージン分だけ幅を縮める */
+    height: auto      !important;
+    min-height: 200px !important;        /* 必要に応じて調整 */
+  }
+
+  /* ③ テキストは下に回す（既存の flex-direction:column が効いている前提） */
+  body.works-page .hero-content {
+    flex: 1 1 100% !important;
+    max-width: 100%  !important;
+  }
 }
