@@ -2,15 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --primary-bg-color: #f7fbfd;
+  --primary-bg-color: rgb(233, 233, 233);
   --primary-accent: #0c1618;
-  --secondary-accent: #6f1d1b;
+  --secondary-accent: #60cb27;
 
   --main-text-color: #0c1618;
   --supportive-text-color: #242d2f;
   --gray-text-color: #565a5b;
 
-  --white-color: #fff;
+  --white-color: #e6e6e6;
   --gray-color: #e9e8e8;
   --gray-color-2: #c0c0c0;
   --gray-color-3: #e6e6e6;
@@ -79,7 +79,7 @@ body {
 }
 
 .btn:active {
-  background-color: #8b4a48;
+  background-color: #014700;
 }
 
 .btn-white {
@@ -668,4 +668,16 @@ h5 {
   80% {
     top: 0;
   }
+}
+/* 追加ダヨーン */
+/* ===== skill グループの余白 & タイトル装飾 ===== */
+.skill-group {
+  margin-bottom: 2rem;          /* グループ間の余白 */
+}
+
+.skill-group-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--accent,#60cb27); /* お好みで色指定 */
 }
