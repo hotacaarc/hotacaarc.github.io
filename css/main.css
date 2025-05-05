@@ -848,7 +848,7 @@ body.works-page .hero-img img{
 }
 
 /* ==============================================================
-   作品ページのヒーロー 3D コンテナに高さを再設定
+   作品ページのヒーロー 3D コンテナに高さを再設定 3Dつぶれない様、不要かも
    ============================================================== */
    body.works-page .hero-img {
     height: 60vh !important;        /* 画面高さの60％を確保 */
@@ -862,3 +862,41 @@ body.works-page .hero-img img{
     object-fit: contain;            /* 元のアスペクト比を守る */
   }
   
+  /* ─────────────────────────────────────
+   3D モデル（model-viewer）を透明背景＆正常サイズで表示
+   ───────────────────────────────────── */
+model-viewer {
+  display: block;                    /* ブロック要素として幅100%を効かせる */
+  width: 100% !important;            /* 必ず親幅いっぱい */
+  height: 100% !important;           /* 親の高さを満たす */
+  background-color: transparent !important; /* デフォルトの黒背景を消す */
+}
+
+/* ── 作品ページの 3D ヒーロー領域を強制的に表示 ── */
+body.works-page #home .hero-img {
+  /* 必要な高さを確保 */
+  height: 60vh !important;      /* 画面高さの 60% を占有 */
+  min-height: 300px !important; /* 小さい端末でも潰れない */
+}
+
+body.works-page #home .hero-img model-viewer {
+  /* ブロック化して親のサイズを満たす */
+  display: block !important;
+  width: 100%   !important;
+  height: 100%  !important;
+
+  /* 黒や白のデフォルト背景を消す */
+  background-color: transparent !important;
+}
+/* 作品ページだけ hero-img に高さを確保 */
+body.works-page #home .hero-img {
+  height: 60vh !important;
+  min-height: 300px !important;
+}
+
+body.works-page #home .hero-img model-viewer {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent !important;
+}
