@@ -772,3 +772,15 @@ h5 {
 .project-box{                /* 行間も ❸ と同じ数値に */
   margin-bottom:16px;
 }
+
+/* Worksの見出し用 */
+/* font-size: clamp(2rem, 1.6rem + 1vw, 3rem); */
+
+/* hero-img の高さを 60vh に固定した例 */
+.hero-img{
+  height:60vh;
+}
+.hero-img model-viewer{
+  width:100%;
+  height:100%;
+}

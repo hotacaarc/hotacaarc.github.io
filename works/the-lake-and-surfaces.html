@@ -1,328 +1,108 @@
 <!DOCTYPE html>
-<!-- ==============================================
-     ① ドキュメントタイプ宣言
-     ブラウザに HTML5 で書かれていることを伝える
-================================================= -->
 <html lang="en">
-  <head>
-    <!-- ============================================
-         ② <head> 内: メタデータと外部リソース読込
-    ============================================= -->
-    <meta charset="UTF-8" /> <!-- ページを UTF‑8 でエンコード -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- モバイル端末での表示倍率調整 -->
-    <title>Hotaka Iwami</title> <!-- ブラウザタブに表示されるタイトル -->
+<head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-    <!-- ファビコン（ブラウザタブのアイコン） -->
-    <link rel="shortcut icon" href="img/H200.png" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lake and Surfaces – other Works</title>
 
-    <!-- 主要 CSS。レイアウトやカラースキームを定義 -->
-    <link rel="stylesheet" href="css/main.css" />
-    <!-- メディアクエリなどレスポンシブ専用 CSS -->
-    <link rel="stylesheet" href="css/media.css" />
+  <!-- 共通アセット（相対パス） -->
+  <link rel="shortcut icon" href="../img/H200.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/main.css" />
 
-    <!-- AOS (Animate On Scroll) ライブラリの CSS 読込
-         要素がスクロールインした際のフェードなどを提供 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+  <!-- 作品ページだけの追加調整（ヒーロー） -->
+  <style>
+    /* 左:画像65% | 右:テキスト35% ／モバイルで縦並び */
+    .hero-row{flex-direction:row;}
+    .hero-img     {flex:0 0 65%; max-width:65%;}
+    .hero-content {flex:0 0 35%; max-width:35%;}
+    @media (max-width:768px){
+      .hero-row        {flex-direction:column;}
+      .hero-img,
+      .hero-content    {max-width:100%; flex:1 1 100%;}
+    }
+    /* 小さめ見出し */
+    .hero-heading--small{
+      font-size:clamp(2rem,1.6rem + 1vw,3rem);
+      font-weight:600;
+      line-height:1.25;
+      margin:0 0 .5em;
+    }
+  </style>
+</head>
 
-  <body>
-    <!-- =================================================
-         ③ HEADER: ロゴとナビゲーションバー (固定ヘッダー)
-    ================================================= -->
-    <header id="header" class="header">
-      <div class="container container-lg">
-        <div class="header-nav">
-          <!-- サイトのロゴ（左上） -->
-          <a href="#home" class="logo" data-aos="fade-down" data-aos-duration="1000">
-            Hotaka Iwami
-          </a>
+<body>
+<!-- ================================================= HEADER -->
+<header id="header" class="header">
+  <div class="container container-lg">
+    <div class="header-nav">
+      <!-- ロゴ → サイトルート -->
+      <a href="/" class="logo">Hotaka&nbsp;Iwami</a>
 
-          <!-- ハンバーガーメニューを含むナビゲーション -->
-          <nav id="nav" class="nav">
-            <ul class="nav-list" data-aos="fade-down" data-aos-duration="1000">
-              <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-              <li class="nav-item"><a href="#about" class="nav-link">Skills</a></li>
-              <li class="nav-item"><a href="#projects" class="nav-link">Works</a></li>
-              <!-- <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li> -->
-            </ul>
-            <!-- モバイル時にアイコンを切り替えるボタン -->
-            <button id="nav-btn" class="nav-btn">
-              <img id="nav-btn-img" src="img/icons/open.svg" alt="Navigation button" />
-            </button>
-          </nav>
-        </div>
+      <nav id="nav" class="nav">
+        <ul class="nav-list">
+          <!-- Home を作品名に -->
+          <li class="nav-item"><a href="#home" class="nav-link active">The Lake and Surfaces</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">other Works</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================= HERO -->
+<section id="home" class="hero">
+  <div class="container container-lg">
+    <div class="hero-row">
+      <!-- 画像列 -->
+      <div class="hero-img">
+        <img src="../img/works/ele2.png" alt="The Lake and Surfaces – hero image">
       </div>
-    </header>
 
-    <!-- =================================================
-         ④ HERO セクション（ファーストビュー）
-    ================================================= -->
-    <section id="home" class="hero">
-      <div class="container container-lg">
-        <div class="hero-row" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="500" data-aos-duration="1000">
+      <!-- テキスト列 -->
+      <div class="hero-content">
+        <h1 class="hero-heading hero-heading--small">The Lake and Surfaces</h1>
+        <span class="hero-heading-subtitle">Diploma Project<br>Co‑Founder of Varial</span>
 
-          <!-- 左カラム: テキストと CTA ボタン -->
-          <div class="hero-content">
-            <!-- <span class="hero-greeting"> Hello, I am</span> -->
-             <!-- 挨拶テキスト -->
-            <h1 class="hero-heading">Hotaka Iwami</h1> <!-- メイン見出し -->
-            <span class="hero-heading-subtitle">Architect
-              <br>
-              Co-Founder of Varial
-            </span> <!-- 肩書き -->
-
-            <!-- SNS アイコン列 -->
-            <div class="about-social-list">
-              <div class="social-links-row">
-                <!-- <a href="#!"><img src="img/social_icons/github.svg" alt="Link to GitHub account" /></a> -->
-                <a href="www.linkedin.com/in/hotaka-iwami-32ba76281"><img src="img/social_icons/linkedin.svg" alt="Link to linkedin profile" /></a>
-                <!-- <a href="#!"><img src="img/social_icons/xing.svg" alt="Link to Xing profile" /></a> -->
-                <!-- <a href="#!"><img src="img/social_icons/facebook.svg" alt="Link to facebook profile" /></a> -->
-                <a href="https://www.instagram.com/hotaca_a_r/"><img src="img/social_icons/instagram.svg" alt="Link to instagram profile" /></a>
-              </div>
-            </div>
-
-            <!-- 行動喚起ボタン (CTA) -->
-            <!-- <div>
-              <a href="#projects" class="btn">My Portfolio</a>
-              <a href="#contact" class="btn btn-white">Contact Me</a>
-            </div> -->
-            <p class="about-descr hero-about">
-              I’m Hotaka Iwami, a London‑based architectural designer living in the UK under the High Potential Individual Visa.
-              I was former PhD Fellow at Kyoto University. Most recently, I coordinated lighting simulation and fabrication of opera set in Naples (2024) as collaboration arichitect of Kengo Kuma and a member of Veluxlab, bringing adaptable, high‑level design skills to international teams.
-              I spent a full year at Tadao Ando Architects (2018‑19) honing rigorous craft, then broadened my outlook with internships at Cabanon Vertical in Marseille (2019) and Atelier Tsuyoshi Tane in Paris (2021‑22).
-              My diploma project “The Lake and Surfaces” earned Kyoto University’s 2021 Excellence Award, while separate studio work gained the Engineering Dean’s Award in 2022
-            </p>
-            <div class="about-download-btn">
-              <a href="pdf/2504 CV.pdf" class="btn btn-white">Download CV</a>
-            </div>
-          </div>
-
-          <!-- 右カラム: ヒーロー画像 -->
-          <div class="hero-img">
-            <img src="img/hero/hero.png" alt="Picture of Christian Buehner taken from Unsplash" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================================================
-         ⑤ ABOUT セクション
-    ================================================= -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="about-title"><h2 class="title">Skills</h2></div>
-        <div class="about-row">
-          <!-- 自己紹介テキスト -->
-          <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
-            <!-- <p class="about-descr">
-              I’m Hotaka Iwami, a London‑based architectural designer living in the UK under the High Potential Individual Visa.
-              I was former PhD Fellow at Kyoto University. Most recently, I coordinated lighting simulation and fabrication of opera set in Naples (2024) as collaboration arichitect of Kengo Kuma and a member of Veluxlab, bringing adaptable, high‑level design skills to international teams.
-              I spent a full year at Tadao Ando Architects (2018‑19) honing rigorous craft, then broadened my outlook with internships at Cabanon Vertical in Marseille (2019) and Atelier Tsuyoshi Tane in Paris (2021‑22).
-              My diploma project “The Lake and Surfaces” earned Kyoto University’s 2021 Excellence Award, while separate studio work gained the Engineering Dean’s Award in 2022
-            </p>
-            <div class="about-download-btn">
-              <a href="pdf/2504 CV.pdf" class="btn btn-white">Download CV</a>
-            </div>
-          </div> -->
-
-          <!-- スキルバー -->
-          <div class="about-skills" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-
-            <!-- ===== 3D Modelling ===== -->
-            <div class="skill-group">
-              <h3 class="skill-group-title">3D Modelling</h3>
-              <div class="skill">
-                <div class="skill-title">Rhinoceros/grasshopper</div>
-                <div class="skill-percent">85%</div>
-                <div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="85"></div></div>
-              </div>
-              <div class="skill">
-                <div class="skill-title">ARCHICAD</div>
-                <div class="skill-percent">90%</div>
-                <div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="90"></div></div>
-              </div>
-              <div class="skill"><div class="skill-title">SketchUp</div><div class="skill-percent">70%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="70"></div></div></div>
-            </div><!-- /skill-group -->
-          
-            <!-- ===== 2D Drawing ===== -->
-            <div class="skill-group">
-              <h3 class="skill-group-title">2D Drawing</h3>
-              <div class="skill"><div class="skill-title">Rhinoceros</div><div class="skill-percent">90%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="90"></div></div></div>
-              <div class="skill"><div class="skill-title">Adobe Illustrator</div><div class="skill-percent">85%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="85"></div></div></div>
-              <div class="skill"><div class="skill-title">Autodesk AutoCAD</div><div class="skill-percent">70%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="70"></div></div></div>
-            </div><!-- /skill-group -->
-          
-            <!-- ===== Rendering ===== -->
-            <div class="skill-group">
-              <h3 class="skill-group-title">Rendering</h3>
-              <div class="skill"><div class="skill-title">twinmotion</div><div class="skill-percent">90%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="90"></div></div></div>
-              <div class="skill"><div class="skill-title">V Ray Render</div><div class="skill-percent">80%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="80"></div></div></div>
-              <div class="skill"><div class="skill-title">Lumion</div><div class="skill-percent">70%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="70"></div></div></div>
-            </div><!-- /skill-group -->
-          
-            <!-- ===== Layout ===== -->
-            <div class="skill-group">
-              <h3 class="skill-group-title">Layout</h3>
-              <div class="skill"><div class="skill-title">Adobe Illustrator</div><div class="skill-percent">90%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="90"></div></div></div>
-              <div class="skill"><div class="skill-title">Adobe Indesign</div><div class="skill-percent">90%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="90"></div></div></div>
-            </div><!-- /skill-group -->
-          
-            <!-- ===== Postproduction ===== -->
-            <div class="skill-group">
-              <h3 class="skill-group-title">Postproduction</h3>
-              <div class="skill"><div class="skill-title">Photoshop</div><div class="skill-percent">85%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="85"></div></div></div>
-              <div class="skill"><div class="skill-title">Premiere Pro</div><div class="skill-percent">60%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="60"></div></div></div>
-            </div><!-- /skill-group -->
-
-            <!-- ===== Game ===== -->
-            <div class="skill-group">
-              <h3 class="skill-group-title">Game Engine</h3>
-              <div class="skill"><div class="skill-title">Unity</div><div class="skill-percent">75%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="75"></div></div></div>
-              <div class="skill"><div class="skill-title">Blender</div><div class="skill-percent">50%</div><div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="50"></div></div></div>
-            </div><!-- /skill-group -->
-          
-          </div><!-- /about-skills -->
-          
-        </div>
-
-        <!-- サービスカード 3 枚 -->
-         
-        <!-- <div class="services-row">
-          <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
-            <img class="service-card-img" src="img/services/01.svg" alt="" />
-            <h3 class="service-card-title">UI/UX Design</h3>
-            <p>Crafting intuitive and visually appealing user interfaces…</p>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-            <img class="service-card-img" src="img/services/02.svg" alt="" />
-            <h3 class="service-card-title">Frontend Development</h3>
-            <p>Developing responsive, accessible, and dynamic websites…</p>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-            <img class="service-card-img" src="img/services/03.svg" alt="" />
-            <h3 class="service-card-title">Content Writing</h3>
-            <p>Creating compelling and audience-focused content…</p>
-          </div> -->
-        </div>
         
+
+        <!-- 説明 -->
+        <p class="hero-about">
+          I’m Hotaka Iwami, a London‑based architectural designer living in the UK under the High Potential Individual Visa. Recent work includes coordinating lighting simulation and fabrication of an opera set in Naples (2024) in collaboration with Kengo Kuma.
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- =================================================
-         ⑥ PROJECTS / WORKS セクション
-    ================================================= -->
-    <section id="projects" class="projects">
-      <div class="container container-lg">
-        <div class="projects-title"><h2 class="title">Works</h2></div>
+<!-- =============================================== WORKS -->
+<section id="projects" class="projects">
+  <div class="container container-lg">
+    <div class="projects-title"><h2 class="title">other Works</h2></div>
 
-        <div class="projects-row">
-          <!-- ==== 作品サムネイル（カード）==== -->
-          <!-- data-aos-delay を変えることで順次フェードイン -->
-           <!--木匠 -->
-          <div class="project-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1000">
-            <a href="#!">
-              <img class="project-img" src="img/works/30Linepicdraiwing.png" alt="" />
-              <div class="project-mask"><!-- ホバー時オーバーレイ -->
-                <div class="project-caption">
-                  <h5 class="white">NOT Architecture</h5>
-                  <p class="white">Organization,Design and Construction/Gazebo/Kyoto Japan</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- 同じ構造のカードが delay を変えながら 5 枚続く -->
-           <!-- 卒制 -->
-          <div class="project-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="300" data-aos-duration="1000">
-            <a href="#!"><img class="project-img" src="img/works/ele2.png" alt="" /><div class="project-mask"><div class="project-caption"><h5 class="white">The Lake and Surfaces</h5><p class="white">Diploma Project/Bridge Complex/Shiga Japan</p></div></div></a>
-          </div>
-          <!-- 比良 -->
-          <div class="project-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="600" data-aos-duration="1000">
-            <a href="#!"><img class="project-img" src="img/works/Hira main Collage.png" alt="" /><div class="project-mask"><div class="project-caption"><h5 class="white">Foundation Designing</h5><p class="white">Warehouse/Shiga Japan</p></div></div></a>
-          </div>
-          <div class="project-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="900" data-aos-duration="1000">
-            <a href="#!"><img class="project-img" src="img/works/Polar SECPLAN.png" alt="" /><div class="project-mask"><div class="project-caption"><h5 class="white">O</h5><p class="white">Multiple Dwelling/Kyoto Japan</p></div></div></a>
-          </div>
-          <div class="project-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="1200" data-aos-duration="1000">
-            <a href="#!"><img class="project-img" src="img/works/under the sea.png" alt="" /><div class="project-mask"><div class="project-caption"><h5 class="white">Plan 75</h5><p class="white">Coffin/Mie Japan</p></div></div></a>
-          </div>
-          <div class="project-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="1500" data-aos-duration="1000">
-            <a href="#!"><img class="project-img" src="img/works/DSC06728.JPG" alt="" /><div class="project-mask"><div class="project-caption"><h5 class="white">from point to the ground</h5><p class="white">Model Base</p></div></div></a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ★ ここに一覧カード（project-box）をコピペしてください ★ -->
 
-    <!-- =================================================
-         ⑦ CONTACT セクション
-    ================================================= -->
-    <!-- <section id="contact" class="contact">
-      <div class="container">
-        <div class="contact-title"><h2 class="title">Contact</h2></div>
-        <div class="contact-content"><p>Tell me about your project.<br />Let's talk and work together!</p></div>
+  </div>
+</section>
 
-        //問い合わせフォーム
-        <form class="contactForm" data-aos="zoom-in" data-aos-duration="1000">
-          <div class="input-box">
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="email" name="email" placeholder="Email Address" required />
-          </div>
-          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-          <div class="contact-button" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="500" data-aos-duration="1000">
-            <button class="btn btn-red" name="submit" type="submit">Send Message</button>
-          </div>
-        </form>
-        <div class="response"></div> 
-        //フォーム送信結果を表示するエリア
-      </div>
-    </section> -->
-    
+<!-- ================================================= FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-copyright"><p>&copy; Hotaka Iwami 2025</p></div>
+    </div>
+  </div>
+</footer>
 
-    <!-- =================================================
-         ⑧ FOOTER
-    ================================================= -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
-          <!-- SNS アイコン (再掲) -->
-          <!-- <div class="social-links-row footer-social">
-            <a href="#!"><img src="img/social_icons/github.svg" alt="Link to GitHub account" /></a>
-            <a href="#!"><img src="img/social_icons/linkedin.svg" alt="Link to linkedin profile" /></a>
-            <a href="#!"><img src="img/social_icons/xing.svg" alt="Link to Xing profile" /></a>
-            <a href="#!"><img src="img/social_icons/facebook.svg" alt="Link to facebook profile" /></a>
-            <a href="#!"><img src="img/social_icons/instagram.svg" alt="Link to instagram profile" /></a>
-          </div> -->
-          <div class="footer-copyright"><p>&copy; Copyright Hotaka Iwami 2025</p></div>
-        </div>
-      </div>
-    </footer>
+<!-- Go to Top -->
+<div id="goToTop" class="goToTop">
+  <a href="#home"><img src="../img/icons/arrow_up.svg" alt="Back to top"></a>
+</div>
 
-    <!-- =================================================
-         ⑨ Back to Top ボタン
-    ================================================= -->
-    <div id="goToTop" class="goToTop"><a href="#home"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a></div>
-
-    <!-- =================================================
-         ⑩ JavaScript 読込
-    ================================================= -->
-    <!-- AOS (Animate On Scroll) 本体 -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <!-- メイン JS モジュール。
-         - モバイルナビの開閉
-         - スクロールに応じたヘッダーの影付け
-         - スキルバーのアニメーション 等を担当 -->
-    <script type="module" src="js/main.js"></script>
-  </body>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script type="module" src="../js/main.js"></script>
+</body>
 </html>
