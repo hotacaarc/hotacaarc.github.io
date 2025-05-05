@@ -846,3 +846,19 @@ body.works-page .hero-img img{
   object-fit:contain;    /* 余白が出ても全体表示 / cover なら切り抜き */
   object-position:center;
 }
+
+/* ==============================================================
+   作品ページのヒーロー 3D コンテナに高さを再設定
+   ============================================================== */
+   body.works-page .hero-img {
+    height: 60vh !important;        /* 画面高さの60％を確保 */
+    min-height: 300px;              /* 小さいスマホでも潰れないよう */
+  }
+  
+  body.works-page .hero-img model-viewer {
+    display: block;                 /* ブロック要素として振る舞う */
+    width: 100%;
+    height: 100%;                   /* 親の60vhを満たす */
+    object-fit: contain;            /* 元のアスペクト比を守る */
+  }
+  
