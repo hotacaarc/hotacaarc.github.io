@@ -196,7 +196,7 @@ h5 {
 /* Hero section */
 .hero {
   position: relative;
-  padding-top: 180px;
+  padding-top: 120px;
   background-color: var(--primary-bg-color);
 }
 
@@ -669,15 +669,106 @@ h5 {
     top: 0;
   }
 }
-/* 追加ダヨーン */
-/* ===== skill グループの余白 & タイトル装飾 ===== */
-.skill-group {
-  margin-bottom: 2rem;          /* グループ間の余白 */
+/* 追加ダヨーン
+   ─────────────────────────────────────────── */
+
+/* ===== Hero の微調整 ======================================= */
+.hero-row{                /* テキスト列と画像列を中央に揃える */
+  align-items: center;
+}
+.hero-content{            /* 左列の幅・余白を少し調整 */
+  flex: 0 0 55%;
+  padding-right: 2rem;
+}
+.hero-about{              /* 自己紹介文の整形 */
+  margin-top: 1.5rem;
+  max-width: 40rem;
+  padding-right: .5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width:768px){
+  .hero-about{ margin-top:1rem; }
 }
 
-.skill-group-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: var(--accent,#60cb27); /* お好みで色指定 */
+/* ===== Skills セクション ================================== */
+.about{ padding-bottom:2rem; }        /* 下余白を圧縮 */
+
+.about-row{ grid-template-columns:1fr; } /* テキストを外したので 1 列 */
+
+.about-skills{                         /* 2 列グリッド */
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2rem;
+}
+@media (max-width:600px){              /* モバイルは 1 列 */
+  .about-skills{ grid-template-columns:1fr; }
+}
+
+.skill-group{ margin-bottom:1.5rem; }  /* グループ間余白 */
+.skill-group-title{
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:.75rem;
+  color:var(--secondary-accent);
+}
+
+/* ===== Works（Masonry レイアウト＋ホバー）================== */
+.projects-row{              /* 段組みレイアウト */
+  column-count:2;           /* 列数 ※メディアクエリで増減可 */
+  column-gap:32px;          /* 列間 */
+  width:100%;
+}
+/* 例：大画面で 3 列にしたい場合
+@media (min-width:1400px){
+  .projects-row{ column-count:3; }
+}
+*/
+
+.project-box{               /* 各カード */
+  display:inline-block;     /* column のお作法 */
+  width:100%;
+  margin-bottom:32px;       /* 行間 */
+  position:relative;
+  overflow:hidden;          /* はみ出し隠す & ホバー干渉防止 */
+  break-inside:avoid;       /* 列途中で分割させない */
+}
+
+.project-img{               /* サムネイル画像 */
+  width:100%;
+  height:auto;              /* 縦横比そのまま */
+  display:block;
+  object-fit:contain;       /* 画像全体を収める（余白が出ても OK） */
+  object-position:center;
+  transform-origin:center;
+  transition:transform .8s cubic-bezier(.23,1,.32,1);
+}
+
+.project-box:hover{ z-index:10; }  /* 前面へ */
+.project-box:hover .project-img{
+  transform:scale(1.06);          /* 適度にズーム */
+}
+
+/* ===== Works（Masonry レイアウト＋ホバー）================== */
+.projects-row{
+  display:block;           /* ★ flex を打ち消して列レイアウトを有効化 */
+  column-count:2;
+  column-gap:32px;
+  width:100%;
+}
+/* === Works レイアウトのセンタリング & ギャップ調整 ============ */
+.projects-row{
+  /* ❶ 2 列ぶん＋列間ギャップだけの幅を計算し、中央寄せ */
+  max-width: calc(420px * 2 + 64px); /* 420 は 1 カードの理想幅 */
+  margin: 0 auto;
+
+  /* ❷ 列は幅ベースで自動生成に変更（幅 420px 目安で増減）*/
+  column-count:auto;
+  column-width:420px;
+
+  /* ❸ 列間＆行間を少し広げて “真ん中” に余裕を持たせる */
+  column-gap:32px;          /* ← 元より広めの中央ギャップ */
+}
+.project-box{                /* 行間も ❸ と同じ数値に */
+  margin-bottom:16px;
 }
