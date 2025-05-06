@@ -858,6 +858,7 @@ body.works-page .hero-heading--small {
   font-weight: 600                 !important;
   line-height: 1.25                !important;
   margin: 0 0 0.5em                !important;
+  /* はみ出し防止 */
   overflow-wrap: break-word;
 }
 
@@ -884,4 +885,14 @@ body.works-page .hero-heading--small {
     flex: 1 1 100% !important;
     max-width: 100%  !important;
   }
+}
+
+/* Hero の video を他の画像と同じ規格に揃える */
+body.works-page .hero-img video,
+body.works-page .hero-img img {
+  display: block;            /* ブロック要素として振る舞う */
+  width: 100% !important;    /* 親幅いっぱい */
+  height: 100% !important;   /* 親高さを満たす */
+  object-fit: cover;         /* cover または contain をお好みで */
+  object-position: center;   /* 中央寄せ */
 }

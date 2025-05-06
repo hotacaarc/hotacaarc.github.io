@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ① ビューポート＆文字セット -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+
+    <title>MODEL – other Works</title>
+
+    <!-- ファビコン -->
+    <link rel="shortcut icon" href="../img/H200.png" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- Web Components polyfill (iOS12–向け) -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-bundle.js"></script>
+    <!-- model-viewer モジュール本体 -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </head>
+
+  <body class="works-page">
+    <!-- ================================================= HEADER -->
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="/" class="logo">Hotaka&nbsp;Iwami</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="#home" class="nav-link active">MODEL</a></li>
+              <li class="nav-item"><a href="#projects" class="nav-link">other Works</a></li>
+            </ul>
+            <button id="nav-btn" class="nav-btn">
+              <img id="nav-btn-img" src="../img/icons/open.svg" alt="Navigation button" />
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================================================= HERO -->
+    <section id="home" class="hero">
+      <div class="container container-lg">
+        <div class="hero-row">
+          <!-- 画像列 -->
+          <div class="hero-img model3D">
+            <!-- ↓ model-viewer は必ず body 内に一箇所だけ配置 -->
+            <model-viewer
+              src="/works/gazebo/gazebo.glb"
+              alt="3D view of MODEL"
+              camera-controls
+              auto-rotate
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              style="width:100%;height:100%;--poster-color:transparent;">
+            </model-viewer>
+          </div>
+
+          <!-- テキスト列 -->
+          <div class="hero-content">
+            <h1 class="hero-heading hero-heading--small">MODEL</h1>
+            <span class="hero-heading-subtitle">
+              Diploma Project<br>Co-Founder of Varial
+            </span>
+
+            <!-- 賞など -->
+            <p class="hero-about">
+              Excellence Award 2021 Kyoto University 2021 diproma projects <br>Featured in “Japan Diploma Projects 2021” Kindai-Kenchikusha
+            </p>
+            
+            <!-- 説明 -->
+            <p class="hero-about">
+              I’m Hotaka Iwami, a London-based architectural designer living in the UK under the High Potential Individual Visa. Recent work includes coordinating lighting simulation and fabrication of an opera set in Naples (2024) in collaboration with Kengo Kuma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================== WORKS -->
+    <section id="projects" class="projects">
+      <div class="container container-lg">
+        <div class="projects-title"><h2 class="title">other Works</h2></div>
+        <!-- ★ ここに一覧カード（project-box）をコピペしてください ★ -->
+      </div>
+    </section>
+
+    <!-- ================================================= FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-copyright">
+            <p>&copy; Hotaka Iwami 2025</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================================================= Back to Top -->
+    <div id="goToTop" class="goToTop">
+      <a href="#home"><img src="../img/icons/arrow_up.svg" alt="Back to top"></a>
+    </div>
+
+    <!-- ================================================= Scripts -->
+    <!-- 作品ページだけのモデル制御（必要なら） -->
+    <script type="module" src="/js/model.js"></script>
+    <!-- 全ページ共通スクリプト -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
