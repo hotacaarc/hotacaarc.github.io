@@ -896,3 +896,77 @@ body.works-page .hero-img img {
   object-fit: cover;         /* cover または contain をお好みで */
   object-position: center;   /* 中央寄せ */
 }
+
+
+/* ==== Ginza Woven Bond gallery ================================= */
+.gw-gallery { text-align:center; margin-top:1.5rem; }
+.gw-gallery #gw-main {
+  width:100%; max-width:800px; height:auto;
+  cursor:pointer; object-fit:cover;
+}
+.gw-thumbs { margin-top:.75rem; display:flex; gap:.5rem; overflow-x:auto; }
+.gw-thumbs img {
+  width:80px; height:60px; object-fit:cover; cursor:pointer;
+  opacity:.6; transition:.3s;
+}
+.gw-thumbs img:hover,
+.gw-thumbs img.active { opacity:1; }
+
+.gw-modal {
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.85); z-index:2000;
+}
+.gw-modal-img { max-width:90%; max-height:90%; object-fit:contain; }
+
+.gw-close, .gw-prev, .gw-next {
+  position:absolute; top:50%; transform:translateY(-50%);
+  color:#fff; font-size:2rem; cursor:pointer; user-select:none;
+  background:rgba(0,0,0,.4); padding:.25em .5em; border-radius:4px;
+}
+.gw-close { top:10%; right:4%; transform:none; }
+.gw-prev  { left:4%; }
+.gw-next  { right:4%; }
+
+.gw-dots { position:absolute; bottom:6%; left:50%; transform:translateX(-50%); display:flex; gap:.5rem; }
+.gw-dots span{
+  width:8px; height:8px; border-radius:50%; background:#777; cursor:pointer;
+}
+.gw-dots span.active{ background:#fff; }
+/* ============================================================== */
+
+/* ======= ギャラリー・サムネイル調整 ===================== */
+
+/* ① サムネイルを中央寄せ＋幅80%に */
+.gw-gallery {
+  position: relative;           /* 重ね表示の基準にする */
+}
+.gw-thumbs {
+  position: absolute;           /* メイン画像に重ねる */
+  left: 50%;
+  bottom: 10px;                 /* 下から少し余白を空ける */
+  transform: translateX(-50%);  /* 中央寄せ */
+  display: flex;
+  gap: .5rem;
+  width: 80%;                   /* メイン幅の 80% */
+  justify-content: center;      /* 画像を中央寄せ */
+}
+
+/* ② サムネイルサイズを行幅に応じて自動計算（最大高さ70px） */
+.gw-thumbs img {
+  flex: 0 0 calc( (100% - 2rem) / 5 ); /* 例：5枚なら自動計算 */
+  max-height: 70px;
+  height: auto;
+}
+
+/* ③ 小画面(<=600px)では行を下(従来)に戻しつつ幅100% */
+@media (max-width: 600px){
+  .gw-thumbs{
+    position: static;
+    width: 100%;
+    margin-top: .75rem;
+    transform:none;
+  }
+  .gw-thumbs img{
+    flex: 0 0 80px;              /* 固定 80px 幅に戻す */
+  }
+}

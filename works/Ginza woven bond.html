@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="/js/main.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ginza Woven Bond – other Works</title>
+
+    <!-- 共通アセット（相対パス） -->
+    <link rel="shortcut icon" href="../img/H200.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+  </head>
+
+  <body class="works-page">
+
+
+    <!-- ================================================= HEADER -->
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <!-- ロゴ → サイトルート -->
+          <a href="/" class="logo">Hotaka&nbsp;Iwami</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <!-- Home を作品名に -->
+              <li class="nav-item"><a href="#home" class="nav-link active">Ginza Woven Bond</a></li>
+              <li class="nav-item"><a href="#projects" class="nav-link">other Works</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================================================= HERO -->
+    <section id="home" class="hero">
+      <div class="container container-lg">
+        <div class="hero-row">
+           <!-- Hero 動画（コメントは外に） -->
+          <div class="hero-img">
+            <!-- iOS での自動再生を有効にする boolean 属性はここ -->
+            <video
+              class="hero-video"
+              src="../works/Ginza Woven Bond/twisting.mp4"
+              type="video/mp4"
+              playsinline
+              webkit-playsinline
+              autoplay
+              muted
+              loop
+              poster="" 
+              controls
+            >
+              <!--うえ、どうがのヘッダー？  -->
+              お使いのブラウザは video タグに対応していません。
+              
+            </video>
+          </div>
+
+          <!-- テキスト列 -->
+          <div class="hero-content">
+            <h1 class="hero-heading hero-heading--small">Ginza Woven Bond</h1>  
+            <span class="hero-heading-subtitle">
+              Art  Work / Ginza Tokyo Japan
+            </span>
+            
+            <!-- 賞など -->
+            <p class="hero-about">
+              Commissioned by: Ginmikai Ginza
+            </p>
+            
+            <!-- 説明 -->
+            <p class="hero-about">
+              This installation was commissioned by an association in Ginza—Tokyo's historic district for fine textiles—to give new life to the fabric remnants discarded by its shops. 
+              <br><br>Though flimsy by nature, cloth can be transformed through twisting into a self-supporting structure imbued with a tangible tension. This stability is achieved by a rope-making principle: when bundles twisted one way are counter-twisted together, the micro and macro torsions lock each other in a state of equilibrium. 
+              <br><br>The creative act, therefore, was to take these powerless fragments destined for waste and grant them collective strength. Through this process, the scraps are sublimated into a single form reminiscent of a shimenawa (a sacred rope), liberating the material from its path to disposal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ===== Image Gallery (thumbnails + modal) ================= -->
+<div class="gw-gallery">
+  <!-- ① 表示中のメイン画像 -->
+  <img id="gw-main" src="../works/Ginza Woven Bond/IMG_9861.JPEG" alt="Ginza Woven Bond main image">
+
+  <!-- ② サムネイル一覧 -->
+  <div class="gw-thumbs">
+    <img src="/works/Ginza Woven Bond/IMG_9861.JPEG" alt="" data-index="0">
+    <img src="/works/Ginza Woven Bond/Artboard 3.jpg" alt="" data-index="1">
+    <img src="/works/Ginza Woven Bond/R0016408.JPEG" alt="" data-index="2">
+    <img src="/works/Ginza Woven Bond/IMG_1171.JPG" alt="" data-index="3">
+    <!-- 追加画像があればここへ -->
+  </div>
+</div>
+
+<!-- ③ モーダル（クリックで拡大表示） -->
+<div id="gw-modal" class="gw-modal">
+  <span class="gw-close">&times;</span>
+  <img class="gw-modal-img" src="" alt="">
+  <div class="gw-prev">&lt;</div>
+  <div class="gw-next">&gt;</div>
+  <div class="gw-dots"></div>
+</div>
+<!-- ========================================================= -->
+
+
+    <!-- =============================================== WORKS -->
+    <section id="projects" class="projects">
+      <div class="container container-lg">
+        <div class="projects-title"><h2 class="title">other Works</h2></div>
+
+        <!-- ★ ここに一覧カード（project-box）をコピペしてください ★ -->
+      </div>
+    </section>
+
+    <!-- ================================================= FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-copyright"><p>&copy; Hotaka Iwami 2025</p></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Go to Top -->
+    <div id="goToTop" class="goToTop">
+      <a href="#home"><img src="../img/icons/arrow_up.svg" alt="Back to top"></a>
+    </div>
+
+    <!-- Scripts -->
+    
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
+
+
+<!-- gallery の追加　Scripts -->
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/gallery.js"></script>

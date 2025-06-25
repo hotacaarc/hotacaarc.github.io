@@ -1,1 +1,8 @@
 .vscode/settings.json
+# ビルドで吐かれるファイルを除外したい場合
+# 例: .html だけコミット、src/ は残す
+# （不要ならスキップでも可）
+!.gitignore
+src/
+css/
+js/
