@@ -970,3 +970,6 @@ body.works-page .hero-img img {
     flex: 0 0 80px;              /* 固定 80px 幅に戻す */
   }
 }
+/* モーダルを隠す・開く */
+#gw-modal         { display: none;  /* 初期は非表示 */ }
+#gw-modal.open    { display: flex; }  /* JS が付加 */
