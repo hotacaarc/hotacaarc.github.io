@@ -1,0 +1,8 @@
+<div class="gw-gallery">
+  <img id="gw-main" src="{{ images[0] }}" alt="">
+  <div class="gw-thumbs">
+    {% for img in images %}
+      <img src="{{ img }}" data-index="{{ loop.index0 }}">
+    {% endfor %}
+  </div>
+</div>

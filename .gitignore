@@ -3,6 +3,6 @@
 # 例: .html だけコミット、src/ は残す
 # （不要ならスキップでも可）
 !.gitignore
-src/
-css/
-js/
+# src/
+# css/
+# js/
