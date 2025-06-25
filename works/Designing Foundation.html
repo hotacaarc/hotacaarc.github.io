@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NAME IMG – other Works</title>
+    <title>Designing Foundation – other Works</title>
 
     <!-- 共通アセット（相対パス） -->
     <link rel="shortcut icon" href="../img/H200.png" type="image/x-icon" />
@@ -26,7 +26,7 @@
           <nav id="nav" class="nav">
             <ul class="nav-list">
               <!-- Home を作品名に -->
-              <li class="nav-item"><a href="#home" class="nav-link active">NAME IMG</a></li>
+              <li class="nav-item"><a href="#home" class="nav-link active">Designing Foundation</a></li>
               <li class="nav-item"><a href="#projects" class="nav-link">other Works</a></li>
             </ul>
           </nav>
@@ -40,30 +40,59 @@
         <div class="hero-row">
           <!-- 画像列 -->
           <div class="hero-img">
-            <img src="../img/works/ele2.png" alt="NAME IMG – hero image">
+            <img src="../works/Designinf Foundation/BigaxoEN.jpg" alt="Designing Foundation – hero image">
           </div>
 
           <!-- テキスト列 -->
           <div class="hero-content">
-            <h1 class="hero-heading hero-heading--small">NAME IMG</h1>
+            <h1 class="hero-heading hero-heading--small">Designing Foundation</h1>
             <span class="hero-heading-subtitle">
-              Diploma Project<br>Co‑Founder of Varial
+              Warehouse<br>
             </span>
             
             <!-- 賞など -->
             <p class="hero-about">
-              Excellence Award 2021 Kyoto University 2021 diproma projects <br>Featured in “Japan Diploma Projects 2021” Kindai-Kenchikusha
+               Collaboration with Shinji Iwasaki, Naoki Kitagaki
             </p>
             
             <!-- 説明 -->
             <p class="hero-about">
-              I’m Hotaka Iwami, a London‑based architectural designer living in the UK under the High Potential Individual Visa. Recent work includes coordinating lighting simulation and fabrication of an opera set in Naples (2024) in collaboration with Kengo Kuma.
+              A warehouse is typically used for temporary storage, and its role in architecture is often considered temporary as well. However, we aspire to see the building continue to be inhabited beyond its initial purpose. 
+              <br>In response to the homeowner’s current needs and considering the potential possibilities for the future, we designed a structure to solve the immediate need, while its foundation was conceived as a framework for the building’s long-term future.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+
+<!-- ===== Image Gallery (thumbnails + modal) ================= -->
+<div class="gw-gallery">
+  <!-- ① 表示中のメイン画像 -->
+  <img id="gw-main" src="../works/Designinf Foundation/Exhibition.JPG" alt="Designing Foundation main image">
+
+  <!-- ② サムネイル一覧 -->
+  <div class="gw-thumbs">
+    <img src="/works/Designinf Foundation/Exhibition.JPG" alt="" data-index="0">
+    <img src="/works/Designinf Foundation/MAINKISOSECAISO最終系.png" alt="" data-index="1">
+    <img src="/works/Designinf Foundation/cnc pill.png" alt="" data-index="2">
+    <img src="/works/Designinf Foundation/BWmodel.jpg" alt="" data-index="3">
+    
+    <!-- 追加画像があればここへ -->
+  </div>
+</div>
+
+<!-- ③ モーダル（クリックで拡大表示） -->
+<div id="gw-modal" class="gw-modal">
+  <span class="gw-close">&times;</span>
+  <img class="gw-modal-img" src="" alt="">
+  <div class="gw-prev">&lt;</div>
+  <div class="gw-next">&gt;</div>
+  <div class="gw-dots"></div>
+</div>
+<!-- ========================================================= -->
+
+    
     <!-- =============================================== WORKS -->
     <section id="projects" class="projects">
       <div class="container container-lg">
@@ -92,3 +121,6 @@
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
+<!-- gallery の追加　Scripts -->
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/gallery.js"></script>

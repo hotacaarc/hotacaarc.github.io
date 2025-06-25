@@ -60,7 +60,7 @@
           <div class="hero-content">
             <h1 class="hero-heading hero-heading--small">The Pseudo</h1>
             <span class="hero-heading-subtitle">
-              Gazebo / Kyoto Japan<br>Director, Chief DesinerDean’s Award 2022 Graduate School of Engineering, Kyoto University
+              Gazebo / Kyoto Japan<br>Director, Chief Desiner
             </span>
              <!-- 賞など -->
             
@@ -75,6 +75,34 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== Image Gallery (thumbnails + modal) ================= -->
+<div class="gw-gallery">
+  <!-- ① 表示中のメイン画像 -->
+  <img id="gw-main" src="../img/works/30Linepicdraiwing.png" alt="gazebo main image">
+
+  <!-- ② サムネイル一覧 -->
+  <div class="gw-thumbs">
+    <img src="/img/works/30Linepicdraiwing.png" alt="" data-index="0">
+    <img src="/works/gazebo/modelfrontjpg.jpg" alt="" data-index="1">
+    <img src="/works/gazebo/roof.jpg" alt="" data-index="2">
+    <img src="/works/gazebo/bottom.JPEG" alt="" data-index="3">
+    <img src="/works/gazebo/houseshapw.JPG" alt="" data-index="4">
+    <img src="/works/gazebo/exp.JPG" alt="" data-index="5">
+    <img src="/works/gazebo/arrey.JPG" alt="" data-index="6">
+    <!-- 追加画像があればここへ -->
+  </div>
+</div>
+<!-- ③ モーダル（クリックで拡大表示） -->
+<div id="gw-modal" class="gw-modal">
+  <span class="gw-close">&times;</span>
+  <img class="gw-modal-img" src="" alt="">
+  <div class="gw-prev">&lt;</div>
+  <div class="gw-next">&gt;</div>
+  <div class="gw-dots"></div>
+</div>
+<!-- ========================================================= -->
+
 
     <!-- =============================================== WORKS -->
     <section id="projects" class="projects">
@@ -101,9 +129,12 @@
     </div>
 
     <!-- ================================================= Scripts -->
-    <!-- 作品ページだけのモデル制御（必要なら） -->
-    <script type="module" src="/js/model.js"></script>
-    <!-- 全ページ共通スクリプト -->
+
+  
+    <!-- gallery の追加　Scripts -->
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/gallery.js"></script>
+
   </body>
 </html>
+
