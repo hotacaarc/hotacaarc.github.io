@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NAME IMG – other Works</title>
+    <title>Slices of Life – other Works</title>
 
     <!-- 共通アセット（相対パス） -->
     <link rel="shortcut icon" href="../img/H200.png" type="image/x-icon" />
@@ -26,7 +26,7 @@
           <nav id="nav" class="nav">
             <ul class="nav-list">
               <!-- Home を作品名に -->
-              <li class="nav-item"><a href="#home" class="nav-link active">NAME IMG</a></li>
+              <li class="nav-item"><a href="#home" class="nav-link active">Slices of Life</a></li>
               <li class="nav-item"><a href="#projects" class="nav-link">other Works</a></li>
             </ul>
           </nav>
@@ -40,29 +40,60 @@
         <div class="hero-row">
           <!-- 画像列 -->
           <div class="hero-img">
-            <img src="../img/works/ele2.png" alt="NAME IMG – hero image">
+            <img src="/works/Slices of Life/Plan4.png" alt="Slices of Life – hero image">
           </div>
 
           <!-- テキスト列 -->
           <div class="hero-content">
-            <h1 class="hero-heading hero-heading--small">NAME IMG</h1>
+            <h1 class="hero-heading hero-heading--small">Slices of Life</h1>
             <span class="hero-heading-subtitle">
-              Diploma Project<br>Co‑Founder of Varial
+            COLLECTIVE HOUSING
             </span>
             
             <!-- 賞など -->
             <p class="hero-about">
-              Excellence Award 2021 Kyoto University 2021 diproma projects <br>Featured in “Japan Diploma Projects 2021” Kindai-Kenchikusha
+            
             </p>
             
             <!-- 説明 -->
             <p class="hero-about">
-              I’m Hotaka Iwami, a London‑based architectural designer living in the UK under the High Potential Individual Visa. Recent work includes coordinating lighting simulation and fabrication of an opera set in Naples (2024) in collaboration with Kengo Kuma.
+              Cartesian coordinates dominate architectural planning for their practical advantages. 
+              <br>But as Marshall McLuhan said, “We shape our tools and thereafter our tools shape us.” 
+             <br>To be confined by a single system is to limit our thinking. By embracing a polar system, we move beyond the grid-filling game. 
+             <br>It is an intentional shift in perspective, focusing on relationships to a center, and in doing so, unlocking different architectures.
             </p>
           </div>
         </div>
       </div>
     </section>
+
+
+
+<!-- ===== Image Gallery (thumbnails + modal) ================= -->
+<div class="gw-gallery">
+  <!-- ① 表示中のメイン画像 -->
+  <img id="gw-main" src="/works/Slices of Life/Pizzapolar.jpg" alt="Diploma image">
+
+  <!-- ② サムネイル一覧 -->
+  <div class="gw-thumbs">
+    <img src="/works/Slices of Life/Pizzapolar.jpg" alt="" data-index="0">
+    <img src="/works/Slices of Life/PizzaCartesian.jpg" alt="" data-index="1">
+    <img src="/works/Slices of Life/SR.jpg" alt="" data-index="2">
+    <img src="/works/Slices of Life/Section_width6000px.jpg" alt="" data-index="2">
+    
+    <!-- 追加画像があればここへ -->
+  </div>
+</div>
+
+<!-- ③ モーダル（クリックで拡大表示） -->
+<div id="gw-modal" class="gw-modal">
+  <span class="gw-close">&times;</span>
+  <img class="gw-modal-img" src="" alt="">
+  <div class="gw-prev">&lt;</div>
+  <div class="gw-next">&gt;</div>
+  <div class="gw-dots"></div>
+</div>
+<!-- ========================================================= -->
 
     <!-- =============================================== WORKS -->
     <section id="projects" class="projects">
@@ -92,3 +123,9 @@
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
+
+
+
+<!-- gallery の追加　Scripts -->
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/gallery.js"></script>

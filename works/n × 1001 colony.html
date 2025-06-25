@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NAME IMG – other Works</title>
+    <title>n×100/1 colony – other Works</title>
 
     <!-- 共通アセット（相対パス） -->
     <link rel="shortcut icon" href="../img/H200.png" type="image/x-icon" />
@@ -26,7 +26,7 @@
           <nav id="nav" class="nav">
             <ul class="nav-list">
               <!-- Home を作品名に -->
-              <li class="nav-item"><a href="#home" class="nav-link active">NAME IMG</a></li>
+              <li class="nav-item"><a href="#home" class="nav-link active">n×100/1 colony</a></li>
               <li class="nav-item"><a href="#projects" class="nav-link">other Works</a></li>
             </ul>
           </nav>
@@ -40,29 +40,58 @@
         <div class="hero-row">
           <!-- 画像列 -->
           <div class="hero-img">
-            <img src="../img/works/ele2.png" alt="NAME IMG – hero image">
+            <img src="../works/n ×1001 colony/光の階段.png" alt="n×100/1 colony – hero image">
           </div>
 
           <!-- テキスト列 -->
           <div class="hero-content">
-            <h1 class="hero-heading hero-heading--small">NAME IMG</h1>
+            <h1 class="hero-heading hero-heading--small">n×100/1 colony</h1>
             <span class="hero-heading-subtitle">
-              Diploma Project<br>Co‑Founder of Varial
+              Collaboration with Laboratory of Insect Ecology, Kyoto Univ.
             </span>
             
             <!-- 賞など -->
             <p class="hero-about">
-              Excellence Award 2021 Kyoto University 2021 diproma projects <br>Featured in “Japan Diploma Projects 2021” Kindai-Kenchikusha
+              Featured in “traverse 2020” 
             </p>
             
             <!-- 説明 -->
             <p class="hero-about">
-              I’m Hotaka Iwami, a London‑based architectural designer living in the UK under the High Potential Individual Visa. Recent work includes coordinating lighting simulation and fabrication of an opera set in Naples (2024) in collaboration with Kengo Kuma.
+              No ant holds a blueprint, yet the colony still builds an ordered nest with a single purpose — species survival. This order, created by many small local actions, is called self-organisation. 
+              <br>Inspired by this, I invited Prof. Kenji Matsuura (Laboratory of Insect Ecology, Kyoto University), I apply this logic to architectural design and develop a spatial prototype that grows from interacting agents instead of a top-down plan. 
+              <br>Form follows action: architecture arises from the choreography of design moves, not from a pre-drawn outline.
             </p>
           </div>
         </div>
       </div>
     </section>
+
+
+<!-- ===== Image Gallery (thumbnails + modal) ================= -->
+<div class="gw-gallery">
+  <!-- ① 表示中のメイン画像 -->
+  <img id="gw-main" src="/works/n ×1001 colony/Studio Collage.png" alt="Diploma image">
+
+  <!-- ② サムネイル一覧 -->
+  <div class="gw-thumbs">
+    <img src="/works/n ×1001 colony/Studio Collage.png" alt="" data-index="0">
+    <img src="/works/n ×1001 colony/価値ある空間.png" alt="" data-index="1">
+    <img src="/works/n ×1001 colony/階段か、開口か.png" alt="" data-index="2">
+    <img src="/works/n ×1001 colony/断面図.png" alt="" data-index="2">
+    
+    <!-- 追加画像があればここへ -->
+  </div>
+</div>
+
+<!-- ③ モーダル（クリックで拡大表示） -->
+<div id="gw-modal" class="gw-modal">
+  <span class="gw-close">&times;</span>
+  <img class="gw-modal-img" src="" alt="">
+  <div class="gw-prev">&lt;</div>
+  <div class="gw-next">&gt;</div>
+  <div class="gw-dots"></div>
+</div>
+<!-- ========================================================= -->
 
     <!-- =============================================== WORKS -->
     <section id="projects" class="projects">
@@ -92,3 +121,7 @@
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
+
+<!-- gallery の追加　Scripts -->
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/gallery.js"></script>
