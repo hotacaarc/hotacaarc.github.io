@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="/js/main.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>German Criminal</title>
+
+    <!-- 共通アセット（相対パス） -->
+    <link rel="shortcut icon" href="../img/H200.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+  </head>
+
+  <body class="works-page">
+
+
+    <!-- ================================================= HEADER -->
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <!-- ロゴ → サイトルート -->
+          <a href="/" class="logo">Hotaka&nbsp;Iwami</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <!-- Home を作品名に -->
+              <li class="nav-item"><a href="#home" class="nav-link active">German Criminal</a></li>
+              <li class="nav-item"><a href="#projects" class="nav-link">other Works</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================================================= HERO -->
+    <section id="home" class="hero">
+      <div class="container container-lg">
+        <div class="hero-row">
+          <!-- 画像列 -->
+          <div class="hero-img">
+            <img src="../works/T-shirt/PARIS gathering.jpg" alt="German Criminal – hero image">
+          </div>
+
+          <!-- テキスト列 -->
+          <div class="hero-content">
+            <h1 class="hero-heading hero-heading--small">German Criminal</h1>
+            <span class="hero-heading-subtitle">
+             T-shirt <br>
+            </span>
+            <!-- 賞など -->
+            <p class="hero-about">
+              
+            </p>
+
+            <!-- 説明 -->
+            <p class="hero-about">
+              Offence Location: Dusseldorf - Germany<br>Charge: A daring 8 km/h over the limit<br>Fine: 30€<br>Technique: Hand-pulled Silkscreen
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!-- ===== Image Gallery (thumbnails + modal) ================= -->
+<div class="gw-gallery">
+  <!-- ① 表示中のメイン画像 -->
+  <img id="gw-main" src="/works/T-shirt/IMG_6185.jpg" alt="German Criminal image">
+
+  <!-- ② サムネイル一覧 -->
+  <div class="gw-thumbs">
+    <img src="/works/T-shirt/IMG_6185.jpg" alt="" data-index="0">
+    <img src="/works/T-shirt/AB062530.jpg" alt="" data-index="1">
+    <img src="/works/T-shirt/AB062591.jpg" alt="" data-index="2">
+    <img src="/works/T-shirt/AB062695.jpg" alt="" data-index="3">
+    <img src="/works/T-shirt/AB062696.jpg" alt="" data-index="4">
+    <img src="/works/T-shirt/IMG_1822.JPEG" alt="" data-index="5">
+  
+   
+    <!-- 追加画像があればここへ -->
+  </div>
+</div>
+
+<!-- ③ モーダル（クリックで拡大表示） -->
+<div id="gw-modal" class="gw-modal">
+  <span class="gw-close">&times;</span>
+  <img class="gw-modal-img" src="" alt="">
+  <div class="gw-prev">&lt;</div>
+  <div class="gw-next">&gt;</div>
+  <div class="gw-dots"></div>
+</div>
+<!-- ========================================================= -->
+
+    <!-- =============================================== WORKS -->
+    <section id="projects" class="projects">
+      <div class="container container-lg">
+        <div class="projects-title"><h2 class="title">other Works</h2></div>
+
+        <!-- ★ ここに一覧カード（project-box）をコピペしてください ★ -->
+      </div>
+    </section>
+
+    <!-- ================================================= FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-copyright"><p>&copy; Hotaka Iwami 2025</p></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Go to Top -->
+    <div id="goToTop" class="goToTop">
+      <a href="#home"><img src="../img/icons/arrow_up.svg" alt="Back to top"></a>
+    </div>
+
+    <!-- Scripts -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
+
+<!-- gallery の追加　Scripts -->
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/gallery.js"></script>
