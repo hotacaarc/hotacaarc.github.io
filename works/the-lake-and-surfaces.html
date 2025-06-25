@@ -69,6 +69,32 @@
       </div>
     </section>
 
+
+<!-- ===== Image Gallery (thumbnails + modal) ================= -->
+<div class="gw-gallery">
+  <!-- ① 表示中のメイン画像 -->
+  <img id="gw-main" src="../works/the-lake-and-surfaces/Secwhole.JPG" alt="Diploma image">
+
+  <!-- ② サムネイル一覧 -->
+  <div class="gw-thumbs">
+    <img src="/works/the-lake-and-surfaces/Secwhole.JPG" alt="" data-index="0">
+    <img src="/works/the-lake-and-surfaces/scoop.JPG" alt="" data-index="1">
+    <img src="/works/the-lake-and-surfaces/waterfront.JPG" alt="" data-index="2">
+    
+    <!-- 追加画像があればここへ -->
+  </div>
+</div>
+
+<!-- ③ モーダル（クリックで拡大表示） -->
+<div id="gw-modal" class="gw-modal">
+  <span class="gw-close">&times;</span>
+  <img class="gw-modal-img" src="" alt="">
+  <div class="gw-prev">&lt;</div>
+  <div class="gw-next">&gt;</div>
+  <div class="gw-dots"></div>
+</div>
+<!-- ========================================================= -->
+
     <!-- =============================================== WORKS -->
     <section id="projects" class="projects">
       <div class="container container-lg">
@@ -97,3 +123,7 @@
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
+
+<!-- gallery の追加　Scripts -->
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/gallery.js"></script>
