@@ -197,6 +197,7 @@ h5 {
 .hero {
   position: relative;
   padding-top: 120px;
+  padding-bottom: 40pt;
   background-color: var(--primary-bg-color);
 }
 
